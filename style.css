@@ -57,6 +57,10 @@ section .button {
     border: none;
 }
 
+#result {
+    padding: 5px;
+}
+
 footer {
     color: white;
     text-align: center;
