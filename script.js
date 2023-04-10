@@ -12,7 +12,7 @@ function isNumber(n) {
 }
 
 function inList(n, l) {
-    if(l.indexOf(Number(n)) != -1) { /* Resultado -1: Valor não está no array. */
+    if(l.indexOf(Number(n)) != -1) { /* Result -1: Value isn't in array. */
         return true
     } else {
         return false
@@ -20,12 +20,12 @@ function inList(n, l) {
 }
 
 function add() {
-    if(isNumber(number.value) && !inList(number.value, values)) { /* É um número e não está na lista? Logo: add. */
+    if(isNumber(number.value) && !inList(number.value, values)) { /* It's a number and isn't in list? So: add. */
     values.push(Number(number.value))
     let item = document.createElement("option")
     item.text = `Value ${number.value} added.`
     list.appendChild(item)
-    result.innerHTML = ""   /* Quando add um número, o texto inferior (id result) é apagado. */
+    result.innerHTML = ""   /* When add a number, the bottom text (id result) is erased. */
     } else {
         alert("Invalid value or value already added in the list.")
     }
@@ -46,7 +46,7 @@ function finalize() {
 
         for(let pos in values) {    
             sum += values[pos]
-            if(values[pos] > highestValue)  /* Para checar maior e menor valor. */
+            if(values[pos] > highestValue)  /* To check highest and lowest value. */
                 highestValue = values[pos]
             if(values[pos] < lowestValue)
                 lowestValue = values[pos]
@@ -59,6 +59,6 @@ function finalize() {
         result.innerHTML += `<p>- The highest value is ${highestValue}.</p>`
         result.innerHTML += `<p>- The lowest value is ${lowestValue}.</p>`
         result.innerHTML += `<p>- The sum of values is ${sum}.</p>`
-        result.innerHTML += `<p>- The average of values is ${average}.</p>`
+        result.innerHTML += `<p>- The average of values is ${average.toFixed(2).replace(".", ",")}.</p>`
     }
 }
